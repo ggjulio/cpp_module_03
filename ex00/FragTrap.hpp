@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/30 01:33:04 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/30 14:57:32 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,12 @@ private:
 	int _rangedAttackDamage;
 	int _armorDamageReduction;
 
+	static bool _seeded;
+
 public:
-	FragTrap(std::string name);
+	FragTrap(const std::string & name);
+	FragTrap(const FragTrap &);
+	FragTrap & operator=(const FragTrap &);
 	~FragTrap();
 
 	std::string getName();
@@ -42,16 +46,16 @@ public:
 	int getRangedAttackDamage();
 	int getArmorDamageReduction();
 
-	bool setHitPoints(int points);
-	bool setEnergyPoints(int points);
+	void setHitPoints(int points);
+	void setEnergyPoints(int points);
 
-
+	void meleeAttack(std::string const &target);
 	void rangedAttack(std::string const &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void vaulthunter_dot_exe(std::string &target);
+	
+	void print(const std::string &);
 };
-
-
 
 #endif
