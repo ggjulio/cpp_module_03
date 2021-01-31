@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:30 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 13:52:23 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/31 14:37:10 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int main(){
 	FragTrap fragTP("Fr4g-TP-v4");
 
-	fragTP.meleeAttack("BAD_HUMAN");
-	fragTP.rangedAttack("BAD_HUMAN");
+	fragTP.meleeAttack("BAD_TRAVELER");
+	fragTP.rangedAttack("BAD_TRAVELER");
 
 	fragTP.takeDamage(50);
 	fragTP.beRepaired(10);
@@ -37,9 +37,9 @@ int main(){
 	fragTP.setEnergyPoints(-2);
 	fragTP.print(std::string("<energy>(-2)")+" updated energy:"+ std::to_string(fragTP.getEnergyPoints()));
 
-	fragTP.vaulthunter_dot_exe("BAD_HUMAN");
-	fragTP.vaulthunter_dot_exe("BAD_HUMAN");
-	fragTP.vaulthunter_dot_exe("BAD_HUMAN");
-	fragTP.vaulthunter_dot_exe("BAD_HUMAN");
+	fragTP.vaulthunter_dot_exe("BAD_TRAVELER");
+	fragTP.vaulthunter_dot_exe("BAD_TRAVELER");
+	fragTP.vaulthunter_dot_exe("BAD_TRAVELER");
+	fragTP.vaulthunter_dot_exe("BAD_TRAVELER");
 	return 0;
 }

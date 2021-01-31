@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 14:26:25 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/31 14:39:30 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ FragTrap::FragTrap(const std::string & name): _name(name), _hitPoints(100),
 	_meleeAttackDamage(30), _rangedAttackDamage(20), _armorDamageReduction(5)
 {
 	print("Created");
+	if (_seeded == false)
+	{
+		srand (time(NULL));
+		_seeded = true;
+	}
 }
 FragTrap::~FragTrap(){
 	print("Destroyed");
@@ -53,18 +58,22 @@ void FragTrap::rangedAttack(std::string const &target){
 }
 
 void FragTrap::takeDamage(unsigned int amount){
+	const char *quote =  "Oh my God, I'm leaking! I'm leaking! ... I can see...the code";
 	int oldHitPoint = getHitPoints();
+
 	setHitPoints(-amount + _armorDamageReduction);
 	print("<takeDamage>("+std::to_string(amount)
-		+") Outch, it hurts ! Before:" + std::to_string(oldHitPoint)
+		+") "+quote+"  | Before:" + std::to_string(oldHitPoint)
 		+ "PV | After:" +  std::to_string(getHitPoints()) + "PV");
 }
 
 void FragTrap::beRepaired(unsigned int amount){
+	const char *quote =  "Good as new, I think. Am I leaking ?                          ";
 	int oldHitPoint = getHitPoints();
+
 	setHitPoints(amount);
 	print("<beRepaired>("+std::to_string(amount)
-		+") Mhh feels good  ! Before:" + std::to_string(oldHitPoint)
+		+") "+quote+ " | Before:" + std::to_string(oldHitPoint)
 		+"PV | After:" + std::to_string(getHitPoints()) + "PV");
 	
 }
@@ -73,11 +82,6 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target){
 	int const damages[sizeof(poolAttacks)/8] = {15, 21, 9, 5, 17};
 	int const attackCost = 25;
 	
-	if (_seeded == false)
-	{
-		srand (time(NULL));
-		_seeded = true;
-	}
 	if (_energyPoints >= attackCost)
 	{
 		setEnergyPoints(-attackCost);
@@ -120,4 +124,3 @@ void FragTrap::setEnergyPoints(int points){
 void  FragTrap::print(const std::string &to_print){
 	std::cout << "FragTrap <" << _name << "> " << to_print << std::endl;
 }
-
