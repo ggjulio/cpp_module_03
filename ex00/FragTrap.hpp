@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/30 14:57:32 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/31 13:33:31 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ public:
 	void rangedAttack(std::string const &target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	void vaulthunter_dot_exe(std::string &target);
+	void vaulthunter_dot_exe(std::string const &target);
 	
-	void print(const std::string &);
+	void print(const std::string &to_print);
 };
 
 #endif

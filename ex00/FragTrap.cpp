@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/30 15:15:39 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/31 14:26:25 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 
+bool FragTrap::_seeded = false;
 
 FragTrap::FragTrap(const std::string & name): _name(name), _hitPoints(100),
 	_maxHitPoints(100), _energyPoints(100), _maxEnergyPoints(100), _level(1),
@@ -67,18 +68,27 @@ void FragTrap::beRepaired(unsigned int amount){
 		+"PV | After:" + std::to_string(getHitPoints()) + "PV");
 	
 }
-void FragTrap::vaulthunter_dot_exe(std::string &target){
-	std::string const poolAttacks[] = {"mange tes morts", "2", "3", "4", "5"};
-	int const degats[] = {0, 2, 40, 20, 200};
+void FragTrap::vaulthunter_dot_exe(std::string const &target){
+	char const *poolAttacks[] = {"Torgue Fiesta", "Laser Inferno", "Blight Bot", "Miniontrap", "Gun Wizard"};
+	int const damages[sizeof(poolAttacks)/8] = {15, 21, 9, 5, 17};
+	int const attackCost = 25;
 	
-	(void)target;
 	if (_seeded == false)
 	{
 		srand (time(NULL));
 		_seeded = true;
 	}
-	// std::string(attr[rand()%(sizeof(attr)/8)]) + "_" + std::string(name[rand()%(sizeof(name)/8)]));
-
+	if (_energyPoints >= attackCost)
+	{
+		setEnergyPoints(-attackCost);
+		int attack = rand()%(sizeof(poolAttacks)/8);
+		print("<vaulthunter_dot_exe> | Remaining energy:"+std::to_string(getEnergyPoints())
+		+" | Damage:"+std::to_string(damages[attack])+" | Attack to <" + target
+			+"> using <"+poolAttacks[attack]+">");
+	}
+	else
+		print("<vaulthunter_dot_exe> OPPS robot only have "+std::to_string(getEnergyPoints())
+			+"PT    |  You need "+std::to_string(attackCost-getEnergyPoints())+" energy points");	
 }
 
 std::string FragTrap::getName(){ return _name;}
@@ -111,4 +121,3 @@ void  FragTrap::print(const std::string &to_print){
 	std::cout << "FragTrap <" << _name << "> " << to_print << std::endl;
 }
 
-bool FragTrap::_seeded = false;
