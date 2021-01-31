@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:09:46 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/31 17:14:13 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,7 @@ ScavTrap::ScavTrap(const std::string & name): ClapTrap(name)
 	_meleeAttackDamage = 20;
 	_rangedAttackDamage = 15;
 	_armorDamageReduction = 3;
-	
-	print("Created");
-	if (_seeded == false)
-	{
-		srand (time(NULL));
-		_seeded = true;
-	}
+
 }
 ScavTrap::~ScavTrap(){
 	print("Destroyed");

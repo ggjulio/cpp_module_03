@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:02:03 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/31 17:14:22 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ FragTrap::FragTrap(const std::string & name): ClapTrap(name)
 	_meleeAttackDamage = 30;
 	_rangedAttackDamage = 20;
 	_armorDamageReduction = 5;
-
-	print("Created");
-	if (_seeded == false)
-	{
-		srand (time(NULL));
-		_seeded = true;
-	}
 }
 
 FragTrap::~FragTrap(){

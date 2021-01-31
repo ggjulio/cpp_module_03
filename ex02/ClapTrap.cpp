@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 16:32:23 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/01/31 17:15:33 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 bool ClapTrap::_seeded = false;
 
 ClapTrap::ClapTrap(const std::string & name): _name(name), _hitPoints(100),
-	_maxHitPoints(100), _energyPoints(50), _maxEnergyPoints(50), _level(1),
-	_meleeAttackDamage(20), _rangedAttackDamage(15), _armorDamageReduction(3)
+	_maxHitPoints(100), _energyPoints(0), _maxEnergyPoints(0), _level(0),
+	_meleeAttackDamage(0), _rangedAttackDamage(0), _armorDamageReduction(0)
 {
 	print("Created");
 	if (_seeded == false)
