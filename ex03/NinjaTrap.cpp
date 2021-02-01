@@ -6,11 +6,14 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 14:29:24 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 15:29:46 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 #include <iostream>
 #include <string>
 
@@ -49,19 +52,19 @@ NinjaTrap& NinjaTrap::operator=(const NinjaTrap & other){
 	return *this;
 }
 
-void ninjaShoebox(const ClapTrap &t){
+void NinjaTrap::ninjaShoebox(const ClapTrap &t){
+	t.print("Save me from the Badass!");
+}
+
+void NinjaTrap::ninjaShoebox(const FragTrap &t){
 	t.print("You call yourself a badass?");
 }
 
-void ninjaShoebox(const FragTrap &t){
-	t.print("d");
-}
-
-void ninjaShoebox(const ScavTrap &t){
+void NinjaTrap::ninjaShoebox(const ScavTrap &t){
 	t.print("Hi Sc4vTP...Viva La Robolution!");
 }
 
-void ninjaShoebox(const NinjaTrap &t){
+void NinjaTrap::ninjaShoebox(const NinjaTrap &t){
 	t.print("I'm a robot ninja too...Viva La Robolution!");
 }
 

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 14:16:40 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 15:28:22 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class NinjaTrap : public ClapTrap
 {
 public:
-	NinjaTrap(const std::string & name);
+	NinjaTrap(const std::string & name="");
 	NinjaTrap(const NinjaTrap &);
 	NinjaTrap & operator=(const NinjaTrap &);
 	~NinjaTrap();

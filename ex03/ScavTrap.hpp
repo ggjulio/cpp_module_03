@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 14:16:44 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 15:27:19 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class ScavTrap : public ClapTrap
 {
 public:
-	ScavTrap(const std::string & name);
+	ScavTrap(const std::string & name="");
 	ScavTrap(const ScavTrap &);
 	ScavTrap & operator=(const ScavTrap &);
 	~ScavTrap();

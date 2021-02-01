@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 14:59:32 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 15:32:52 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ private:
 	static bool _seeded;
 
 public:
-	ScavTrap(const std::string & name);
+	ScavTrap(const std::string & name="");
 	ScavTrap(const ScavTrap &);
 	ScavTrap & operator=(const ScavTrap &);
 	~ScavTrap();
