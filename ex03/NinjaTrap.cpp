@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:24:32 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 14:29:24 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,22 @@ NinjaTrap& NinjaTrap::operator=(const NinjaTrap & other){
 	return *this;
 }
 
-void  NinjaTrap::print(const std::string &to_print){
+void ninjaShoebox(const ClapTrap &t){
+	t.print("You call yourself a badass?");
+}
+
+void ninjaShoebox(const FragTrap &t){
+	t.print("d");
+}
+
+void ninjaShoebox(const ScavTrap &t){
+	t.print("Hi Sc4vTP...Viva La Robolution!");
+}
+
+void ninjaShoebox(const NinjaTrap &t){
+	t.print("I'm a robot ninja too...Viva La Robolution!");
+}
+
+void  NinjaTrap::print(const std::string &to_print) const{
 	std::cout << "NinjaTrap <" << _name << "> " << to_print << std::endl;
 }

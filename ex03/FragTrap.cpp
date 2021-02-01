@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:14:22 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 14:19:46 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target){
 			+"PT    |  You need "+std::to_string(attackCost-getEnergyPoints())+" energy points");	
 }
 
-void  FragTrap::print(const std::string &to_print){
+void  FragTrap::print(const std::string &to_print) const{
 	std::cout << "FragTrap <" << _name << "> " << to_print << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:15:33 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 14:18:23 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,6 @@ void ClapTrap::setEnergyPoints(int points){
 		_energyPoints = 0;
 }
 
-void  ClapTrap::print(const std::string &to_print){
+void  ClapTrap::print(const std::string &to_print) const{
 	std::cout << "ClapTrap <" << _name << "> " << to_print << std::endl;
 }

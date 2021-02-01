@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:07:51 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 14:15:55 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	
-	virtual void print(const std::string &to_print);
+	virtual void print(const std::string &to_print) const;
 
 protected:
 	std::string _name;

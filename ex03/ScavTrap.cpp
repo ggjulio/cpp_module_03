@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:14:13 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 14:19:54 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void ScavTrap::challengeNewcomer(std::string const &target){
 		+"> ! Come here. I have a challenge for you : <"+poolChallenges[challenge]+">");
 }
 
-void  ScavTrap::print(const std::string &to_print){
+void  ScavTrap::print(const std::string &to_print) const{
 	std::cout << "ScavTrap <" << _name << "> " << to_print << std::endl;
 }

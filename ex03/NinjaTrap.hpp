@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 01:26:20 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 14:16:40 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	void ninjaShoebox(const ScavTrap &);
 	void ninjaShoebox(const NinjaTrap &);
 	
-	virtual void print(const std::string &to_print);
+	virtual void print(const std::string &to_print) const;
 };
 
 #endif
