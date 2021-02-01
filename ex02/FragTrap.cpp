@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:14:22 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/01 14:40:11 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,12 @@ FragTrap& FragTrap::operator=(const FragTrap & other){
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target){
-	char const *poolAttacks[] = {"Torgue Fiesta", "Laser Inferno", "Blight Bot", "Miniontrap", "Gun Wizard"};
+	char const *poolAttacks[] = {
+		"Torgue Fiesta: \"Grenade confetti!\"",
+		"Laser Inferno: \"Everybody, dance time! Da-da-da-dun-daaa-da-da-da-dun-daaa!\"",
+		"Blight Bot: \"Activating good cop mode...\"",
+		"Miniontrap: \"Ratattattattatta! Powpowpowpow! Powpowpowpow! Pew-pew, pew-pew-pewpew!\"",
+		"Gun Wizard: \"You can call me Gundalf!\""};
 	int const damages[sizeof(poolAttacks)/8] = {15, 21, 9, 5, 17};
 	int const attackCost = 25;
 	
