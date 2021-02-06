@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:30 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 03:45:00 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:57:48 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int main(){
 	std::cout << "###############################################################" << std::endl;
 		ClapTrap &c = ninjaTP;
 		c.print("Who am I");
-		c.meleeAttack("AHH");
-		c.rangedAttack("AHH");
+		c.meleeAttack("Mechant");
+		c.rangedAttack("Mechant");
 		c.takeDamage(200);
 		c.beRepaired(200);
 		std::cout << "Actual energy:" << c.getEnergyPoints() << std::endl;
