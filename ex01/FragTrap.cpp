@@ -6,13 +6,15 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 14:39:59 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 02:31:53 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
+#include <sstream>
 #include <string>
+#include <cstdlib>
 
 bool FragTrap::_seeded = false;
 
@@ -27,13 +29,16 @@ FragTrap::FragTrap(const std::string & name): _name(name), _hitPoints(100),
 		_seeded = true;
 	}
 }
+
 FragTrap::~FragTrap(){
 	print("Destroyed");
 }
+
 FragTrap::FragTrap(const FragTrap &other){
 	*this = other;
 	print("Created using copy constructor");
 }
+
 FragTrap& FragTrap::operator=(const FragTrap & other){
 	print("ASSIGNATION Operator called");
 	_name = other._name;
@@ -49,35 +54,46 @@ FragTrap& FragTrap::operator=(const FragTrap & other){
 }
 
 void FragTrap::meleeAttack(std::string const &target){
-	print("melee attack to <" + target + "> causing "
-		+ std::to_string(_meleeAttackDamage) + " damage");
+	std::ostringstream ss;
+ 
+	ss << "melee attack to <" << target << "> causing "
+		<< _meleeAttackDamage << " damage";
+	print(ss.str());
 }
 void FragTrap::rangedAttack(std::string const &target){
-	print("Ranged attack to <" + target + "> causing "
-		+ std::to_string(_rangedAttackDamage) + " damage");
+	std::ostringstream ss;
+ 
+	ss << "Ranged attack to <" << target << "> causing "
+		<< _rangedAttackDamage << " damage";
+	print(ss.str());
 }
 
 void FragTrap::takeDamage(unsigned int amount){
+	std::ostringstream ss;
 	const char *quote =  "Oh my God, I'm leaking! I'm leaking! ... I can see...the code";
 	int oldHitPoint = getHitPoints();
 
 	setHitPoints(-amount + _armorDamageReduction);
-	print("<takeDamage>("+std::to_string(amount)
-		+") "+quote+"  | Before:" + std::to_string(oldHitPoint)
-		+ "PV | After:" +  std::to_string(getHitPoints()) + "PV");
+	ss <<"<takeDamage>(" << amount
+		<< ") " << quote <<"  | Before:" << oldHitPoint
+		<< "PV | After:" << getHitPoints() << "PV";
+	print(ss.str());
 }
 
 void FragTrap::beRepaired(unsigned int amount){
+	std::ostringstream ss;
 	const char *quote =  "Good as new, I think. Am I leaking ?                          ";
 	int oldHitPoint = getHitPoints();
 
 	setHitPoints(amount);
-	print("<beRepaired>("+std::to_string(amount)
-		+") "+quote+ " | Before:" + std::to_string(oldHitPoint)
-		+"PV | After:" + std::to_string(getHitPoints()) + "PV");
+	ss << "<beRepaired>("<<amount
+		<<") "<<quote<< " | Before:" << oldHitPoint
+		<<"PV | After:" << getHitPoints() << "PV";
+	print(ss.str());
 	
 }
 void FragTrap::vaulthunter_dot_exe(std::string const &target){
+	std::ostringstream ss;
 	char const *poolAttacks[] = {
 		"Torgue Fiesta: \"Grenade confetti!\"",
 		"Laser Inferno: \"Everybody, dance time! Da-da-da-dun-daaa-da-da-da-dun-daaa!\"",
@@ -91,13 +107,14 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target){
 	{
 		setEnergyPoints(-attackCost);
 		int attack = rand()%(sizeof(poolAttacks)/8);
-		print("<vaulthunter_dot_exe> | Remaining energy:"+std::to_string(getEnergyPoints())
-		+" | Damage:"+std::to_string(damages[attack])+" | Attack to <" + target
-			+"> using <"+poolAttacks[attack]+">");
+		ss << "<vaulthunter_dot_exe> | Remaining energy:"<< getEnergyPoints()
+		<<" | Damage:" << damages[attack] <<" | Attack to <" << target
+			<<"> using <" << poolAttacks[attack] << ">";
 	}
 	else
-		print("<vaulthunter_dot_exe> OPPS robot only have "+std::to_string(getEnergyPoints())
-			+"PT    |  You need "+std::to_string(attackCost-getEnergyPoints())+" energy points");	
+		ss << "<vaulthunter_dot_exe> OPPS robot only have "<< getEnergyPoints()
+			<<"PT    |  You need "<<attackCost-getEnergyPoints() << " energy points";	
+	print(ss.str());
 }
 
 std::string FragTrap::getName(){ return _name;}
@@ -126,6 +143,6 @@ void FragTrap::setEnergyPoints(int points){
 		_energyPoints = 0;
 }
 
-void  FragTrap::print(const std::string &to_print){
+void  FragTrap::print(const std::string &to_print) const{
 	std::cout << "FragTrap <" << _name << "> " << to_print << std::endl;
 }

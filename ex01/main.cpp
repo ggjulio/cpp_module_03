@@ -6,16 +6,18 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:30 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 15:12:12 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 02:40:26 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include <iostream>
+#include <sstream>
 #include <string>
 
 int main(){
+	std::stringstream ss;
 	{
 	FragTrap fragTP("Fr4g-TP-v4");
 
@@ -30,14 +32,20 @@ int main(){
 	std::cout << std::endl;
 	std::cout << "Actual energy:" << fragTP.getEnergyPoints() << std::endl;
 	fragTP.setEnergyPoints(-200);
-	fragTP.print(std::string("<energy>(-200)")+" updated energy:"+ std::to_string(fragTP.getEnergyPoints()));
+	ss << "<energy>(-200) updated energy:" << fragTP.getEnergyPoints();
+	fragTP.print(ss.str());
+	ss.str("");
 
 	fragTP.setEnergyPoints(200);
-	fragTP.print(std::string("<energy>(200)")+" updated energy:"+ std::to_string(fragTP.getEnergyPoints()));
+	ss << "<energy>(200) updated energy:" << fragTP.getEnergyPoints();
+	fragTP.print(ss.str());
+	ss.str("");
 
 	std::cout << std::endl << std::endl;
 	fragTP.setEnergyPoints(-2);
-	fragTP.print(std::string("<energy>(-2)")+" updated energy:"+ std::to_string(fragTP.getEnergyPoints()));
+	ss << "<energy>(-2) updated energy:" << fragTP.getEnergyPoints();
+	fragTP.print(ss.str());
+	ss.str("");
 
 	fragTP.vaulthunter_dot_exe("BAD_TRAVELER");
 	fragTP.vaulthunter_dot_exe("BAD_TRAVELER");
@@ -61,10 +69,14 @@ int main(){
 	std::cout << std::endl;
 	std::cout << "Actual energy:" << scavTP.getEnergyPoints() << std::endl;
 	scavTP.setEnergyPoints(-200);
-	scavTP.print(std::string("<energy>(-200)")+" updated energy:"+ std::to_string(scavTP.getEnergyPoints()));
+	ss << "<energy>(-200) updated energy:" << scavTP.getEnergyPoints();
+	scavTP.print(ss.str());
+	ss.str("");
 	
 	scavTP.setEnergyPoints(200);
-	scavTP.print(std::string("<energy>(200)")+" updated energy:"+ std::to_string(scavTP.getEnergyPoints()));
+	ss << "<energy>(200) updated energy:" << scavTP.getEnergyPoints();
+	scavTP.print(ss.str());
+	ss.str("");
 
 	scavTP.challengeNewcomer("NEWCOMER");
 	scavTP.challengeNewcomer("NEWCOMER");

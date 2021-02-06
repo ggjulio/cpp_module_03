@@ -6,13 +6,15 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/01/31 17:10:00 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 02:51:00 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
+#include <sstream>
 #include <string>
+#include <cstdlib>
 
 bool ScavTrap::_seeded = false;
 
@@ -49,41 +51,53 @@ ScavTrap& ScavTrap::operator=(const ScavTrap & other){
 }
 
 void ScavTrap::meleeAttack(std::string const &target){
-	print("melee attack to <" + target + "> causing "
-		+ std::to_string(_meleeAttackDamage) + " damage");
+	std::ostringstream ss;
+ 
+	ss << "melee attack to <" << target << "> causing "
+		<< _meleeAttackDamage << " damage";
+	print(ss.str());
 }
 void ScavTrap::rangedAttack(std::string const &target){
-	print("Ranged attack to <" + target + "> causing "
-		+ std::to_string(_rangedAttackDamage) + " damage");
+	std::ostringstream ss;
+ 
+	ss << "Ranged attack to <" << target << "> causing "
+		<< _rangedAttackDamage << " damage";
+	print(ss.str());
 }
 
 void ScavTrap::takeDamage(unsigned int amount){
+	std::ostringstream ss;
 	const char *quote =  "Oh my God, I'm leaking! I'm leaking! ... I can see...the code";
 	int oldHitPoint = getHitPoints();
 
 	setHitPoints(-amount + _armorDamageReduction);
-	print("<takeDamage>("+std::to_string(amount)
-		+") "+quote+"  | Before:" + std::to_string(oldHitPoint)
-		+ "PV | After:" +  std::to_string(getHitPoints()) + "PV");
+	ss <<"<takeDamage>(" << amount
+		<< ") " << quote <<"  | Before:" << oldHitPoint
+		<< "PV | After:" << getHitPoints() << "PV";
+	print(ss.str());
 }
 
 void ScavTrap::beRepaired(unsigned int amount){
+	std::ostringstream ss;
 	const char *quote =  "Good as new, I think. Am I leaking ?                          ";
 	int oldHitPoint = getHitPoints();
 
 	setHitPoints(amount);
-	print("<beRepaired>("+std::to_string(amount)
-		+") "+quote+ " | Before:" + std::to_string(oldHitPoint)
-		+"PV | After:" + std::to_string(getHitPoints()) + "PV");
+	ss << "<beRepaired>("<<amount
+		<<") "<<quote<< " | Before:" << oldHitPoint
+		<<"PV | After:" << getHitPoints() << "PV";
+	print(ss.str());
 	
 }
 void ScavTrap::challengeNewcomer(std::string const &target){
+	std::ostringstream ss;
 	char const *poolChallenges[] = {"Not Full of Monkeys", "Knee-Deep in Brass",
 		"Hard Boiled", "Afternoon Delight", "Open Pandora's Boxes"};
-
 	int challenge = rand()%(sizeof(poolChallenges)/8);
-	print("<challengeNewcomer> Hey <" + target
-		+"> ! Come here. I have a challenge for you : <"+poolChallenges[challenge]+">");
+
+	ss << "<challengeNewcomer> Hey <" << target
+		<< "> ! Come here. I have a challenge for you : <" << poolChallenges[challenge] << ">";
+	print(ss.str());
 }
 
 std::string ScavTrap::getName(){ return _name;}
@@ -112,6 +126,6 @@ void ScavTrap::setEnergyPoints(int points){
 		_energyPoints = 0;
 }
 
-void  ScavTrap::print(const std::string &to_print){
+void  ScavTrap::print(const std::string &to_print) const{
 	std::cout << "ScavTrap <" << _name << "> " << to_print << std::endl;
 }

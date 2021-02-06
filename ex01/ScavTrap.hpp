@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 15:32:52 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 02:40:59 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ public:
 	void beRepaired(unsigned int amount);
 	void challengeNewcomer(std::string const &target);
 	
-	void print(const std::string &to_print);
+	void print(const std::string &to_print) const;
 };
 
 #endif

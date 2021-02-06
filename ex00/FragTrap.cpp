@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 01:36:15 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 02:31:53 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,16 @@ FragTrap::FragTrap(const std::string & name): _name(name), _hitPoints(100),
 		_seeded = true;
 	}
 }
+
 FragTrap::~FragTrap(){
 	print("Destroyed");
 }
+
 FragTrap::FragTrap(const FragTrap &other){
 	*this = other;
 	print("Created using copy constructor");
 }
+
 FragTrap& FragTrap::operator=(const FragTrap & other){
 	print("ASSIGNATION Operator called");
 	_name = other._name;
