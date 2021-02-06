@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 15:41:14 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:43:51 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 NinjaTrap::NinjaTrap(const std::string & name): ClapTrap(name)
 {
+	print("Created");
 	_hitPoints = 60;
 	_maxHitPoints = 60;
 	_energyPoints = 120;

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:30 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 03:36:42 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:45:00 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int main(){
 	ClapTrap ct = ClapTrap("clap");
 	FragTrap ft = FragTrap("frag");
 	ScavTrap st = ScavTrap("scav");
+	std::cout << "###############################################################" << std::endl;
 	{
 		NinjaTrap ninjaTP("Sc4v-TP-v4");	
+	std::cout << "###############################################################" << std::endl;
 		ClapTrap &c = ninjaTP;
 		c.print("Who am I");
 		c.meleeAttack("AHH");
@@ -49,5 +51,6 @@ int main(){
 		ninjaTP.ninjaShoebox(ninjaTP);
 	std::cout << "###############################################################" << std::endl;
 	}
+	std::cout << "###############################################################" << std::endl;
 	return 0;
 }
