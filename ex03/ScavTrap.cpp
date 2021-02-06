@@ -6,16 +6,18 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 14:19:54 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:15:51 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 ScavTrap::ScavTrap(const std::string & name): ClapTrap(name)
 {
+	print("Created");
 	_hitPoints = 100;
 	_maxHitPoints = 100;
 	_energyPoints = 50;

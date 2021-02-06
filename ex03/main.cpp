@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:30 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 15:48:21 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:36:42 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
 #include <iostream>
+#include <sstream>
 #include <string>
 
 int main(){
+	std::stringstream ss;
 	ClapTrap ct = ClapTrap("clap");
-	FragTrap ft = FragTrap("clap");
+	FragTrap ft = FragTrap("frag");
 	ScavTrap st = ScavTrap("scav");
 	{
 		NinjaTrap ninjaTP("Sc4v-TP-v4");	
@@ -29,10 +31,16 @@ int main(){
 		c.takeDamage(200);
 		c.beRepaired(200);
 		std::cout << "Actual energy:" << c.getEnergyPoints() << std::endl;
+		
 		c.setEnergyPoints(-200);
-		c.print(std::string("<energy>(-200)")+" updated energy:"+ std::to_string(c.getEnergyPoints()));
+		ss << "<energy>(-200) updated energy:" << c.getEnergyPoints();
+		c.print(ss.str());
+		ss.str("");
+				
 		c.setEnergyPoints(200);
-		c.print(std::string("<energy>(200)")+" updated energy:"+ std::to_string(c.getEnergyPoints()));
+		ss << "<energy>(200) updated energy:" << c.getEnergyPoints();
+		c.print(ss.str());
+		ss.str("");
 		
 	std::cout << "###############################################################" << std::endl;
 		ninjaTP.ninjaShoebox(ct);

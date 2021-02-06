@@ -6,13 +6,15 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 14:18:23 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:09:28 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
+#include <sstream>
 #include <string>
+#include <cstdlib>
 
 bool ClapTrap::_seeded = false;
 
@@ -49,33 +51,42 @@ ClapTrap& ClapTrap::operator=(const ClapTrap & other){
 }
 
 void ClapTrap::meleeAttack(std::string const &target){
-	print("melee attack to <" + target + "> causing "
-		+ std::to_string(_meleeAttackDamage) + " damage");
+	std::ostringstream ss;
+ 
+	ss << "melee attack to <" << target << "> causing "
+		<< _meleeAttackDamage << " damage";
+	print(ss.str());
 }
 void ClapTrap::rangedAttack(std::string const &target){
-	print("Ranged attack to <" + target + "> causing "
-		+ std::to_string(_rangedAttackDamage) + " damage");
+	std::ostringstream ss;
+ 
+	ss << "Ranged attack to <" << target << "> causing "
+		<< _rangedAttackDamage << " damage";
+	print(ss.str());
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
+	std::ostringstream ss;
 	const char *quote =  "Oh my God, I'm leaking! I'm leaking! ... I can see...the code";
 	int oldHitPoint = getHitPoints();
 
 	setHitPoints(-amount + _armorDamageReduction);
-	print("<takeDamage>("+std::to_string(amount)
-		+") "+quote+"  | Before:" + std::to_string(oldHitPoint)
-		+ "PV | After:" +  std::to_string(getHitPoints()) + "PV");
+	ss <<"<takeDamage>(" << amount
+		<< ") " << quote <<"  | Before:" << oldHitPoint
+		<< "PV | After:" << getHitPoints() << "PV";
+	print(ss.str());
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
+	std::ostringstream ss;
 	const char *quote =  "Good as new, I think. Am I leaking ?                          ";
 	int oldHitPoint = getHitPoints();
 
 	setHitPoints(amount);
-	print("<beRepaired>("+std::to_string(amount)
-		+") "+quote+ " | Before:" + std::to_string(oldHitPoint)
-		+"PV | After:" + std::to_string(getHitPoints()) + "PV");
-	
+	ss << "<beRepaired>("<<amount
+		<<") "<<quote<< " | Before:" << oldHitPoint
+		<<"PV | After:" << getHitPoints() << "PV";
+	print(ss.str());
 }
 
 std::string ClapTrap::getName(){ return _name;}

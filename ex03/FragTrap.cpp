@@ -6,16 +6,19 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 14:38:08 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:15:32 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
+#include <sstream>
 #include <string>
+#include <cstdlib>
 
 FragTrap::FragTrap(const std::string & name): ClapTrap(name)
 {
+	print("Created");
 	_hitPoints = 100;
 	_maxHitPoints = 100;
 	_energyPoints = 100;
@@ -50,6 +53,7 @@ FragTrap& FragTrap::operator=(const FragTrap & other){
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target){
+	std::ostringstream ss;
 	char const *poolAttacks[] = {
 		"Torgue Fiesta: \"Grenade confetti!\"",
 		"Laser Inferno: \"Everybody, dance time! Da-da-da-dun-daaa-da-da-da-dun-daaa!\"",
@@ -63,13 +67,14 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target){
 	{
 		setEnergyPoints(-attackCost);
 		int attack = rand()%(sizeof(poolAttacks)/8);
-		print("<vaulthunter_dot_exe> | Remaining energy:"+std::to_string(getEnergyPoints())
-		+" | Damage:"+std::to_string(damages[attack])+" | Attack to <" + target
-			+"> using <"+poolAttacks[attack]+">");
+		ss << "<vaulthunter_dot_exe> | Remaining energy:"<< getEnergyPoints()
+		<<" | Damage:" << damages[attack] <<" | Attack to <" << target
+			<<"> using <" << poolAttacks[attack] << ">";
 	}
 	else
-		print("<vaulthunter_dot_exe> OPPS robot only have "+std::to_string(getEnergyPoints())
-			+"PT    |  You need "+std::to_string(attackCost-getEnergyPoints())+" energy points");	
+		ss << "<vaulthunter_dot_exe> OPPS robot only have "<< getEnergyPoints()
+			<<"PT    |  You need "<<attackCost-getEnergyPoints() << " energy points";	
+	print(ss.str());
 }
 
 void  FragTrap::print(const std::string &to_print) const{
