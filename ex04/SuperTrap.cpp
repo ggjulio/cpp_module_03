@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 04:41:44 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 04:42:59 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Hit points (Fragtrap) 100
 •Armor damage reduction (Fragtrap) 5
 •rangedAttack (Fragtrap) 20
 •meleeAttack (Ninjatrap) 60
+https://stackoverflow.com/questions/57105923/c-for-a-class-that-inherited-multiple-classes-how-to-inherit-certain-attribu
 */
 
 	print("Created");
