@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 03:09:28 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 23:06:14 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void ClapTrap::beRepaired(unsigned int amount){
 
 std::string ClapTrap::getName(){ return _name;}
 int ClapTrap::getHitPoints(){ return _hitPoints;}
-int ClapTrap::getMaxHitPoints(){ return _maxEnergyPoints;}
+int ClapTrap::getMaxHitPoints(){ return _maxHitPoints;}
 int ClapTrap::getEnergyPoints(){ return _energyPoints;}
 int ClapTrap::getMaxEnergyPoints(){ return _maxEnergyPoints;}
 int ClapTrap::getLevel(){ return _level;}

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 02:51:00 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 23:07:22 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void ScavTrap::challengeNewcomer(std::string const &target){
 
 std::string ScavTrap::getName(){ return _name;}
 int ScavTrap::getHitPoints(){ return _hitPoints;}
-int ScavTrap::getMaxHitPoints(){ return _maxEnergyPoints;}
+int ScavTrap::getMaxHitPoints(){ return _maxHitPoints;}
 int ScavTrap::getEnergyPoints(){ return _energyPoints;}
 int ScavTrap::getMaxEnergyPoints(){ return _maxEnergyPoints;}
 int ScavTrap::getLevel(){ return _level;}

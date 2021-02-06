@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 02:31:53 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 23:07:02 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target){
 
 std::string FragTrap::getName(){ return _name;}
 int FragTrap::getHitPoints(){ return _hitPoints;}
-int FragTrap::getMaxHitPoints(){ return _maxEnergyPoints;}
+int FragTrap::getMaxHitPoints(){ return _maxHitPoints;}
 int FragTrap::getEnergyPoints(){ return _energyPoints;}
 int FragTrap::getMaxEnergyPoints(){ return _maxEnergyPoints;}
 int FragTrap::getLevel(){ return _level;}
