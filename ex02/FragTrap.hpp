@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 15:33:49 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:07:05 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 
 	void vaulthunter_dot_exe(std::string const &target);
 	
-	virtual void print(const std::string &to_print);
+	virtual void print(const std::string &to_print) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:35 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/01 15:33:35 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 03:16:18 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	ClapTrap(const std::string & name="");
 	ClapTrap(const ClapTrap &);
 	ClapTrap & operator=(const ClapTrap &);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	std::string getName();
 	int getHitPoints();
@@ -41,7 +41,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	
-	virtual void print(const std::string &to_print);
+	virtual void print(const std::string &to_print) const;
 
 protected:
 	std::string _name;
