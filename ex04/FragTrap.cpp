@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 03:15:32 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 22:59:41 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 #include <string>
 #include <cstdlib>
 
+FragTrap::FragTrap()
+{
+	print("Created");
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
+}
 FragTrap::FragTrap(const std::string & name): ClapTrap(name)
 {
 	print("Created");

@@ -6,7 +6,7 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 04:42:59 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 23:16:20 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,10 @@
 #include <iostream>
 #include <string>
 
-SuperTrap::SuperTrap(const std::string & name): ClapTrap(name)
+SuperTrap::SuperTrap(const std::string & name): ClapTrap(name), FragTrap(), NinjaTrap()
 {
-/*
-Hit points (Fragtrap) 100
-•Max hit points (Fragtrap) 100
-•Energy points (Ninjatrap) 120
-•Max energy points (Ninjatrap) 120
-•Level (1)
-•Name (Parameter of constructor)
-•Melee attack damage (Ninjatrap) 60
-•Ranged attack damage (Fragtrap) 20
-•Armor damage reduction (Fragtrap) 5
-•rangedAttack (Fragtrap) 20
-•meleeAttack (Ninjatrap) 60
-https://stackoverflow.com/questions/57105923/c-for-a-class-that-inherited-multiple-classes-how-to-inherit-certain-attribu
-*/
-
 	print("Created");
-	_hitPoints = 100;
-	_maxHitPoints = 100;
-	_energyPoints = 120;
-	_maxEnergyPoints = 120;
 	_level = 1;
-	_meleeAttackDamage = 60;
-	_rangedAttackDamage = 20;
-	_armorDamageReduction = 5;
 }
 
 SuperTrap::~SuperTrap(){

@@ -6,16 +6,21 @@
 /*   By: juligonz <juligonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:21:33 by juligonz          #+#    #+#             */
-/*   Updated: 2021/02/06 03:43:51 by juligonz         ###   ########.fr       */
+/*   Updated: 2021/02/06 23:13:36 by juligonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
 #include <iostream>
 #include <string>
+
+NinjaTrap::NinjaTrap()
+{
+	print("Created");
+	_energyPoints = 120;
+	_maxEnergyPoints = 120;
+	_meleeAttackDamage = 60;
+}
 
 NinjaTrap::NinjaTrap(const std::string & name): ClapTrap(name)
 {
